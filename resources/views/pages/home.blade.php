@@ -16,14 +16,18 @@
             @foreach($category as $key => $cate )
             <div class="col-lg-6 col-sm-6">
                 <div class="single_feature_post_text" style="background: #9bebb3;">
-                    <p>Chất lượng tốt</p>
-                    <h3>{{$cate->category_name}}</h3>
-                    <a href="{{URL::to('/danh-muc-san-pham/'.$cate->category_id)}}" class="feature_btn">Xem ngay <i class="fas fa-play"></i></a>
+                    <div style="width: 180px">
+                        <p>Chất lượng tốt</p>
+                        <h3>{{$cate->category_name}}</h3>
+                        <a href="{{URL::to('/danh-muc-san-pham/'.$cate->category_id)}}" class="feature_btn">Xem ngay <i class="fas fa-play"></i></a>
+                    </div>
+
                     @foreach($img_product as $key => $img)
                     @if($img->category_id==$cate->category_id)
                     <img src="{{URL::to('public/Upload/Product/'.$img->product_image)}}" height="350px" width="300px">
                     @endif
                     @endforeach
+
                 </div>
             </div>
             @endforeach

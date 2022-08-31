@@ -47,10 +47,10 @@
                         <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{URL::to('/trang-chu')}}">Trang chủ</a>
+                                    <a class="nav-link" href="{{URL::to('/trang-chu')}}" style="font-size: 20px;">Trang chủ</a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 20px;">
                                         Danh mục sản phẩm
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
@@ -61,7 +61,7 @@
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 20px;">
                                         Khách hàng
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
@@ -74,6 +74,7 @@
                                         ?>
                                             <a class="dropdown-item" href="{{URL::to('/logout-checkout')}}">Đăng xuất</a>
                                             <a class="dropdown-item" href="{{URL::to('/history')}}">Lịch sử mua hàng</a>
+                                            <a class="dropdown-item" href="{{URL::to('/doi-mk')}}">Đổi Mật Khẩu</a>
                                         <?php
                                         } else {
                                         ?>
@@ -86,7 +87,7 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{URL::to('/contact')}}">Liên hệ</a>
+                                    <a class="nav-link" href="{{URL::to('/contact')}}" style="font-size: 20px;">Liên hệ</a>
                                 </li>
                             </ul>
                         </div>
@@ -126,9 +127,9 @@
                                 <div class="col-lg-6 col-md-8">
                                     <div class="banner_text">
                                         <div class="banner_text_iner">
-                                            <h3>{{$pro->product_name}}</h3>
-                                            <p>{!!$pro->product_desc!!}</p>
-                                            <h4>Giá chỉ: <span>{{number_format($pro->product_price,0,',','.')}} VNĐ</span></h4>
+                                            <h3 style="padding-bottom: 30px;font-size: 30px;font-weight: bold;">{{$pro->product_name}}</h3>
+                                            {!!$pro->product_desc!!}
+                                            <h4 style="font-size: 20px; padding-bottom: 10px; color: red">Giá chỉ: <span>{{number_format($pro->product_price,0,',','.')}} VNĐ</span></h4>
                                             <a href="{{URL::to('/chi-tiet-san-pham/'.$pro->product_id)}}" class="btn_2">Xem ngay</a>
                                         </div>
                                     </div>

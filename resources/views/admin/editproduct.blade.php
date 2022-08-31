@@ -67,7 +67,6 @@
                                 <option value="{{$brand->brand_id}}">{{$brand->brand_name}}</option>
                                 @endif
                                 @endforeach
-
                             </select>
                         </div>
 

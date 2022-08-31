@@ -8,7 +8,7 @@
             <div class="col-md-8">
                 <div class="login_part_form">
                     <div class="login_part_form_iner">
-                        <h3>Đăng ký tài khoản</h3>
+                        <h3 style="margin-bottom: 40px; text-align: center; font-size: 40px;">Đăng ký tài khoản</h3>
                         <form class="row contact_form" action="{{URL::to('/add-customer')}}" method="post" novalidate="novalidate">
                             {{ csrf_field() }}
                             <div class="col-md-12 form-group p_star">
@@ -24,7 +24,7 @@
                                 <input type="text" class="form-control" id="name" name="customer_phone" value="" data-validation="number" data-validation-error-msg="Bạn hãy điền vào số điện thoại" placeholder="Số điện thoại">
                             </div>
                             <div class="col-md-12 form-group">
-                                <button type="submit" value="submit" class="btn_3">
+                                <button type="submit" value="submit" class="btn_3" style="width:300px; margin: 20px 0 0 160px; font-size: 20px;">
                                     Đăng ký
                                 </button>
                             </div>

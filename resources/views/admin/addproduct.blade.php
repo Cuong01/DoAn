@@ -57,7 +57,6 @@
                                 @foreach($brand_product as $key => $brand)
                                 <option value="{{$brand->brand_id}}">{{$brand->brand_name}}</option>
                                 @endforeach
-
                             </select>
                         </div>
 

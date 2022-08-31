@@ -100,7 +100,6 @@
                                     <div class="single_product_text">
                                         <h4>{{$pro->product_name}}</h4>
                                         <h3>{{number_format($pro->product_price,0,',','.')}} VNĐ</h3>
-
                                         <a><button type="button" class="btn_3 add-to-cart" data-id_product="{{$pro->product_id}}" name="add-to-cart">Thêm vào giỏ</button></a>
 
                                     </div>

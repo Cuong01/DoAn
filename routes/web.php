@@ -55,6 +55,9 @@ Route::post('/dang-nhap', [CheckoutController::class, 'dang_nhap']);
 Route::post('/add-customer', [CheckoutController::class, 'add_customer']);
 Route::post('/save-checkout', [CheckoutController::class, 'save_checkout']);
 Route::get('/check-out', [CheckoutController::class, 'check_out']);
+Route::get('/doi-mk', [CheckoutController::class, 'doi_mk']);
+Route::post('/update-customer/{customer_id}', [CheckoutController::class, 'update_customer']);
+
 
 //backend
 Route::get('/admin', [AdminController::class, 'index']);

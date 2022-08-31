@@ -62,6 +62,36 @@ class CheckoutController extends Controller
         return Redirect::to('/trang-chu');
     }
 
+    public function doi_mk()
+    {
+        $cate_all = DB::table('tbl_category')->orderBy('category_id', 'desc')->get();
+
+        $new_product = DB::table('tbl_product')->where('product_status', '1')->orderBy('product_sold', 'desc')->limit(4)->get();
+
+        return view('pages.doi_mk')->with('cate_all', $cate_all)->with('product', $new_product);
+    }
+
+    public function update_customer(Request $request, $customer_id)
+    {
+        $password_old = md5($request->customer_password);
+        $cus = DB::table('tbl_customer')->where('customer_id', $customer_id)->first();
+        if ($request->customer_email == $cus->customer_email) {
+            if ($password_old == $cus->customer_password) {
+                if ($request->customer_password1 == $request->customer_password2) {
+                    $data = array();
+                    $data['customer_password'] = md5($request->customer_password1);
+                    DB::table('tbl_customer')->where('customer_id', $customer_id)->update($data);
+                    return Redirect()->back()->with('message', 'Đổi mật khẩu thành công');
+                } else {
+                    return Redirect()->back()->with('message', 'Mật khẩu không trùng nhau');
+                }
+            } else {
+                return Redirect()->back()->with('message', 'Mật khẩu không đúng');
+            }
+        } else return Redirect()->back()->with('message', 'Tài khoản Email không đúng');
+    }
+
+
     public function check_out()
     {
         $cate_all = DB::table('tbl_category')->orderBy('category_id', 'desc')->get();
@@ -176,7 +206,7 @@ class CheckoutController extends Controller
             );
             Session::put('customer', $cus);
 
-            return Redirect::to('/show-cart');
+            return Redirect::to('/trang-chu');
         } else {
             return Redirect::to('/login-checkout');
         }
